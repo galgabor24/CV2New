@@ -50,7 +50,7 @@ export default function VideoBackground() {
         poster="/images/hero-mobile.jpg"
       >
         <source 
-          src="/videos/hero-bg (1).mp4" 
+          src="/videos/hero.mp4" 
           type="video/mp4"
         />
       </video>
