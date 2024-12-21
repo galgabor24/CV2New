@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased text-gray-100;
+  }
+
+  /* Custom Scrollbar Styles */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-900/50 backdrop-blur;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-cyan-400/50 to-cyan-600/50 rounded-full border border-cyan-400/20 backdrop-blur;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply from-cyan-400/70 to-cyan-600/70;
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #22d3ee40 #0f172a80;
+  }
+}
+
+@layer utilities {
+  .backdrop-blur-sm {
+    backdrop-filter: blur(8px);
+  }
+  
+  .pt-screen {
+    padding-top: 100vh;
+  }
+}
+
+.snap-mandatory {
+  scroll-snap-type: y mandatory;
+}
+
+.snap-center {
+  scroll-snap-align: center;
+}
+
+/* Typing animations */
+.typing-animation-1 {
+  overflow: hidden;
+  border-right: 2px solid transparent;
+  white-space: nowrap;
+  animation: typing-1 2s steps(25, end);
+  animation-fill-mode: forwards;
+}
+
+.typing-animation-2 {
+  overflow: hidden;
+  border-right: 2px solid transparent;
+  white-space: nowrap;
+  width: 0;
+  animation: typing-2 2.5s steps(45, end) 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes typing-1 {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes typing-2 {
+  from { width: 0 }
+  to { width: 100% }
+}
